@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Links</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='me.jpeg') }}" class="profile">
+
+<h1>Abdelrhman 🔥</h1>
+        
+
+        {% for link in links %}
+            <a href="{{ link.url }}" target="_blank" class="btn">
+                {{ link.name }}
+            </a>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
