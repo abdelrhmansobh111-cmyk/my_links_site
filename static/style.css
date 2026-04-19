@@ -1,18 +1,21 @@
 body {
     background: #0f172a;
     color: white;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .profile {
-    width: 70px;
-    height: 70px;
+    width: 120px; 
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid white;
-    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
     transition: 0.3s;
+    margin-bottom: 20px;
 }
 
 .profile:hover {
@@ -20,24 +23,24 @@ body {
 }
 
 .container {
-    margin-top: 100px;
+    margin-top: 50px;
+    padding: 20px;
 }
 
 .btn {
     display: block;
-    width: 200px;
-    margin: 10px auto;
-    padding: 12px;
+    width: 90%;
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 15px;
     background: #2563eb;
     color: white;
     text-decoration: none;
     border-radius: 8px;
-    .profile {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid white;
+    font-weight: bold;
+    transition: 0.3s;
 }
+
+.btn:hover {
+    background: #1d4ed8;
 }
