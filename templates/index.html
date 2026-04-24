@@ -1,22 +1,44 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>My Links</title>
-    
+    <title>Abdelrhman Sobh | My Links</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
     <div class="container">
-        <img src="{{ url_for('static', filename='me.jpeg') }}" class="profile">
+        <img src="{{ url_for('static', filename='me.jpeg') }}" class="profile" alt="Abdelrhman Sobh">
 
-        <h1>Abdelrhman 🧑‍💻🥷</h1>
+        <h1>Abdelrhman Sobh 🧑‍💻🥷</h1>
+
+        <div class="bio-section">
+            <p class="tagline">Future ML Engineer | Data Analyst</p>
+            <p class="sub-tagline">Turning data into insights 📊</p>
+            <p class="foundation">Mathematics is my foundation 📐</p>
+        </div>    
+
+        <audio controls>
+            <source src="{{ url_for('static', filename='Albumaty.Com_abaz___gwn_syna_.mp3') }}" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
         
         {% for link in links %}
             <a href="{{ link.url }}" target="_blank" class="btn">
+                {% if 'github' in link.url.lower() %}
+                    <i class="fab fa-github"></i>
+                {% elif 'facebook' in link.url.lower() %}
+                    <i class="fab fa-facebook"></i>
+                {% elif 'instagram' in link.url.lower() %}
+                    <i class="fab fa-instagram"></i>
+                {% elif 'whatsapp' in link.url.lower() %}
+                    <i class="fab fa-whatsapp"></i>
+                {% endif %}
+                
                 {{ link.name }}
             </a>
         {% endfor %}

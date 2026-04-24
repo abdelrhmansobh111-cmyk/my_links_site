@@ -1,12 +1,20 @@
+/* تنسيق الصفحة العام */
 body {
-    background: #0f172a;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
+.container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* صورة البروفايل */
 .profile {
     width: 120px; 
     height: 120px;
@@ -22,25 +30,85 @@ body {
     transform: scale(1.1);
 }
 
-.container {
-    margin-top: 50px;
-    padding: 20px;
+/* قسم السيرة المختصرة (Bio Section) - تعديل نقطة 2 */
+.bio-section {
+    text-align: center;
+    margin: 25px auto 40px auto; /* زيادة المسافة السفلية لراحة العين */
+    max-width: 80% ;
 }
 
+.bio-section p {
+    color: #ffffff !important; /* ضمان وضوح الخط الأبيض */
+    margin-bottom: 12px;      /* مسافة بين الأسطر */
+    line-height: 1.5;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.sub-tagline {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.foundation {
+    font-size: 0.9rem;
+    color: #60a5fa !important; /* لون سماوي فاتح عشان يليق مع الخلفية ويبرز */
+    font-style: italic;
+}
+
+/* مشغل الصوت (Audio Player) - تعديل نقطة 4 */
+audio {
+    width: 280px;
+    height: 35px;
+    margin: 0 auto 35px auto;
+    display: block;
+    border-radius: 20px;
+    opacity: 0.8;
+    /* فلتر لتغميق المشغل عشان يندمج مع الثيم الغامق */
+    filter: invert(90%) hue-rotate(180deg) brightness(1.2); 
+}
+
+/* تنسيق الزراير (Buttons) - تعديل نقطة 3 */
 .btn {
     display: block;
-    width: 90%;
-    max-width: 300px;
+    width: 240px;
     margin: 15px auto;
-    padding: 15px;
-    background: #2563eb;
+    padding: 14px;
+    background: linear-gradient(45deg, #3b82f6, #6366f1);
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة انسيابية احترافية */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-    background: #1d4ed8;
+    transform: scale(1.08) translateY(-3px); /* تكبير ورفع بسيط */
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.5); /* ضل ملون قوي */
+    filter: brightness(1.1);
+}
+
+/* تعديلات الموبايل */
+@media (max-width: 600px) {
+    .btn {
+        width: 85%;
+    }
+
+    .profile {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .bio-section {
+        margin-bottom: 30px;
+    }
 }
