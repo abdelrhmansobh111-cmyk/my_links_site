@@ -42,7 +42,9 @@
                     <i class="fab fa-facebook"></i>
                 {% elif 'instagram' in link.url.lower() %}
                     <i class="fab fa-instagram"></i>
-                {% elif 'whatsapp' in link.url.lower() %}
+                {% elif 'tiktok' in link.url.lower() %}
+                    <i class="fab fa-tiktok"></i>
+                {% elif 'whatsapp' in link.url.lower() or 'wa.me' in link.url.lower() %}
                     <i class="fab fa-whatsapp"></i>
                 {% endif %}
                 
