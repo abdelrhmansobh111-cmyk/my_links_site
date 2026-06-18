@@ -5,28 +5,35 @@
     <title>Abdelrhman Sobh | My Links</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- مكتبة الأيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- ملف الـ CSS الخاص بك -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
     <div class="container">
+        <!-- الصورة الشخصية -->
         <img src="{{ url_for('static', filename='me.jpeg') }}" class="profile" alt="Abdelrhman Sobh">
 
+        <!-- الاسم -->
         <h1>Abdelrhman Sobh 🧑‍💻🥷</h1>
 
+        <!-- قسم الـ Bio -->
         <div class="bio-section">
             <p class="tagline">Future ML Engineer | Data Analyst</p>
             <p class="sub-tagline">Turning data into insights 📊</p>
             <p class="foundation">Mathematics is my foundation 📐</p>
         </div>    
 
-        <audio controls>
+        <!-- مشغل الصوت مع إضافة ID للتحكم به -->
+        <audio id="myAudio" controls>
             <source src="{{ url_for('static', filename='Albumaty.Com_abaz___gwn_syna_.mp3') }}" type="audio/mpeg">
             متصفحك لا يدعم تشغيل الصوت.
         </audio>
         
+        <!-- عرض اللينكات بشكل ديناميكي -->
         {% for link in links %}
             <a href="{{ link.url }}" target="_blank" class="btn">
                 {% if 'github' in link.url.lower() %}
@@ -43,6 +50,22 @@
             </a>
         {% endfor %}
     </div>
+
+    <!-- كود الـ JavaScript للأنيميشن والتشغيل التلقائي الذكي -->
+    <script>
+        // 1. تشغيل الصوت تلقائياً بمجرد ضغط المستخدم في أي مكان بالصفحة لتخطي قيود المتصفح
+        window.addEventListener('click', function() {
+            var audio = document.getElementById("myAudio");
+            if (audio.paused) {
+                audio.play();
+            }
+        }, { once: true }); // { once: true } تعني أن الكود سيتنفذ عند أول ضغطة فقط
+
+        // 2. كود يجعل الزراير تظهر بالتتابع (واحد تلو الآخر) بشكل تفاعلي ممتاز
+        document.querySelectorAll('.btn').forEach((btn, index) => {
+            btn.style.animationDelay = `${(index * 0.15) + 1.4}s`;
+        });
+    </script>
 
 </body>
 </html>

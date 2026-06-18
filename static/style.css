@@ -1,12 +1,22 @@
-/* تنسيق الصفحة العام */
+/* تنسيق الصفحة العام مع أنيميشن للحركة */
 body {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* حركة الخلفية ناعمة */
     color: white;
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* حركة الخلفية الـ Gradient */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -14,7 +24,7 @@ body {
     padding: 20px;
 }
 
-/* صورة البروفايل */
+/* صورة البروفايل مع أنيميشن ظهور */
 .profile {
     width: 120px; 
     height: 120px;
@@ -24,22 +34,29 @@ body {
     box-shadow: 0 0 15px rgba(255,255,255,0.3);
     transition: 0.3s;
     margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease-out; /* ظهور تدريجي */
 }
 
 .profile:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(5deg); /* إضافة لفة خفيفة عند الوقوف عليها */
 }
 
-/* قسم السيرة المختصرة (Bio Section) - تعديل نقطة 2 */
+/* عنوان الاسم */
+h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* قسم السيرة المختصرة (Bio Section) */
 .bio-section {
     text-align: center;
-    margin: 25px auto 40px auto; /* زيادة المسافة السفلية لراحة العين */
-    max-width: 80% ;
+    margin: 25px auto 40px auto; 
+    max-width: 80%;
+    animation: fadeInUp 1.2s ease-out; /* بيظهر بعد الاسم */
 }
 
 .bio-section p {
-    color: #ffffff !important; /* ضمان وضوح الخط الأبيض */
-    margin-bottom: 12px;      /* مسافة بين الأسطر */
+    color: #ffffff !important; 
+    margin-bottom: 12px;      
     line-height: 1.5;
 }
 
@@ -56,11 +73,11 @@ body {
 
 .foundation {
     font-size: 0.9rem;
-    color: #60a5fa !important; /* لون سماوي فاتح عشان يليق مع الخلفية ويبرز */
+    color: #60a5fa !important; 
     font-style: italic;
 }
 
-/* مشغل الصوت (Audio Player) - تعديل نقطة 4 */
+/* مشغل الصوت (Audio Player) */
 audio {
     width: 280px;
     height: 35px;
@@ -68,11 +85,11 @@ audio {
     display: block;
     border-radius: 20px;
     opacity: 0.8;
-    /* فلتر لتغميق المشغل عشان يندمج مع الثيم الغامق */
     filter: invert(90%) hue-rotate(180deg) brightness(1.2); 
+    animation: fadeInUp 1.4s ease-out;
 }
 
-/* تنسيق الزراير (Buttons) - تعديل نقطة 3 */
+/* تنسيق الزراير (Buttons) */
 .btn {
     display: block;
     width: 240px;
@@ -83,14 +100,29 @@ audio {
     text-decoration: none;
     border-radius: 12px;
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة انسيابية احترافية */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* أنيميشن الدخول الافتراضي للزراير */
+    animation: fadeInUp 1.6s ease-out; 
 }
 
 .btn:hover {
-    transform: scale(1.08) translateY(-3px); /* تكبير ورفع بسيط */
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.5); /* ضل ملون قوي */
-    filter: brightness(1.1);
+    transform: scale(1.08) translateY(-5px); /* رفع الزرار أكتر شوية */
+    box-shadow: 0 15px 25px rgba(99, 102, 241, 0.6); /* ضل ناعم وأقوى */
+    filter: brightness(1.15);
+}
+
+/* قواعد أنيميشن الظهور من أسفل لأعلى (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* تعديلات الموبايل */
