@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Abdelrhman Sobh | Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- مكتبة الأيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- ملف الـ CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- زر العودة للصفحة الرئيسية -->
+        <a href="{{ url_for('home') }}" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+
+        <!-- الهيدر الرئيسي -->
+        <header class="cv-header">
+            <h1>عبدالرحمن صبح</h1>
+            <h2>Future Machine Learning Engineer | Data Analyst</h2>
+            <p class="cv-location"><i class="fas fa-map-marker-alt"></i> كفر الشيخ، مصر</p>
+        </header>
+
+        <!-- نبذة شخصية -->
+        <section class="cv-section">
+            <h3><i class="fas fa-user-graduate"></i> نبذة عني</h3>
+            <p>
+                طالب بكلية العلوم - جامعة كفر الشيخ (قسم الرياضيات وحاسب آلي). مهتم بمجالات علوم البيانات والذكاء الاصطناعي مع التركيز على بناء أساس رياضي قوي لنمذجة البيانات وحل المشكلات المعقدة باستخدام Python و C++.
+            </p>
+        </section>
+
+        <!-- التعليم -->
+        <section class="cv-section">
+            <h3><i class="fas fa-university"></i> التعليم</h3>
+            <div class="cv-item">
+                <h4>بكالوريوس العلوم - قسم الرياضيات وحاسب آلي</h4>
+                <p class="cv-sub">جامعة كفر الشيخ | 2024 - الحالي</p>
+                <p>التركيز الدراسي: الرياضيات التطبيقية، البرمجة، والمنطق الرياضي.</p>
+            </div>
+        </section>
+
+        <!-- المهارات التقنية -->
+        <section class="cv-section">
+            <h3><i class="fas fa-code"></i> المهارات التقنية</h3>
+            <div class="skills-grid">
+                <span class="skill-tag"><i class="fab fa-python"></i> Python (NumPy, Pandas, Flask)</span>
+                <span class="skill-tag"><i class="fas fa-laptop-code"></i> C++</span>
+                <span class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                <span class="skill-tag"><i class="fas fa-square-root-variable"></i> Mathematics & Logic</span>
+                <span class="skill-tag"><i class="fas fa-database"></i> Data Processing & Analysis</span>
+            </div>
+        </section>
+
+        <!-- أهم المشاريع -->
+        <section class="cv-section">
+            <h3><i class="fas fa-project-diagram"></i> أبرز المشاريع</h3>
+            
+            <div class="cv-item">
+                <h4>C++ Scientific Calculator Application</h4>
+                <p>تطبيق حاسبة متطور بلغة C++ يحل المعادلات الرياضية المعقدة ويعالج العمليات المثلثية باستخدام خوارزميات الـ Stack parsing.</p>
+            </div>
+
+            <div class="cv-item">
+                <h4>Personal Web & Links Hub (Flask)</h4>
+                <p>موقع تفاعلي لعرض البروفايل والشغف التقني باستخدام Python/Flask مع تحسينات كاملة في تجربة المستخدم UI/UX واستضافة أونلاين.</p>
+            </div>
+        </section>
+
+        <!-- زر الطباعة -->
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="window.print()" class="btn print-btn"><i class="fas fa-print"></i> طباعة / حفظ كـ PDF</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -32,6 +32,11 @@
             <source src="{{ url_for('static', filename='Albumaty.Com_abaz___gwn_syna_.mp3') }}" type="audio/mpeg">
             متصفحك لا يدعم تشغيل الصوت.
         </audio>
+
+        <!-- زر الانتقال إلى صفحة السيرة الذاتية (CV) -->
+        <a href="{{ url_for('cv') }}" class="btn cv-link-btn" style="background: linear-gradient(45deg, #10b981, #059669);">
+            <i class="fas fa-file-alt"></i> السيرة الذاتية (Interactive CV)
+        </a>
         
         <!-- عرض اللينكات بشكل ديناميكي -->
         {% for link in links %}
